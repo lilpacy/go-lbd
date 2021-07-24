@@ -150,6 +150,8 @@ func (l *LBD) Do(r Requester, sign bool) (*Response, error) {
 		return nil, err
 	}
 
+	fmt.Println(string(buf))
+
 	ret := new(Response)
 	err = json.Unmarshal(buf, ret)
 	if err != nil {
@@ -160,7 +162,6 @@ func (l *LBD) Do(r Requester, sign bool) (*Response, error) {
 		return ret, fmt.Errorf("LBD: Backend returns status: %d msg: %s", ret.StatusCode, ret.StatusMessage)
 	}
 
-	fmt.Println(ret)
 	return ret, nil
 }
 
