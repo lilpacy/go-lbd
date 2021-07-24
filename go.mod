@@ -1,4 +1,4 @@
-module github.com/doublejumptokyo/go-lbd
+module github.com/lilpacy/go-lbd
 
 go 1.13
 
